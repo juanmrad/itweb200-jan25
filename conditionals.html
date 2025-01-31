@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Conditionals Example</h1>
+
+  <form id="ageForm">
+    <h2>Age Checker</h2>
+    <input type="number" name="age" placeholder="Please add Age">
+    <button>Check Age</button>
+  </form>
+  <p id="ageResult"></p>
+
+  <script>
+    const ageForm = document.getElementById("ageForm");
+    const ageResult = document.getElementById("ageResult");
+    ageForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (event.target.age.value >= 18) {
+        ageResult.innerText = "You are Over 18."
+      } else {
+        ageResult.innerText = "You are Under 18."
+        location.href = "https://google.com"
+      }
+    })
+  </script>
+</body>
+
+</html>

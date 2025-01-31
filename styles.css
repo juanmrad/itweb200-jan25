@@ -1,0 +1,66 @@
+h1 {
+  font-size: 40px;
+}
+
+div a {
+  color: #8af9d4;
+  font-weight: bold;
+  transition: color 2s;
+}
+
+.about-me {
+  background-color: black;
+  padding: 10px;
+  /* width: 120px; */
+  display: inline-block;
+  margin: 10px;
+  border: 5px solid red;
+  border-radius: 20px;
+}
+
+a {
+  color: rgb(227, 221, 52);
+  background-color: black;
+}
+
+a:hover {
+  color: red;
+}
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#main-title {
+  color: maroon;
+}
+
+.margin-10 {
+  margin: 10px
+}
+
+.box.box-blue {
+  background-color: blue;
+}
+
+.box,
+.rectangle {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+table,
+td,
+th {
+  border: 1px solid black
+}
+
+h1#main-title {
+  margin-left: 10px;
+}
+
+.about-me {
+  margin-left: 10px;
+  text-align: center;
+}
