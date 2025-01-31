@@ -25,13 +25,8 @@
       imageSelect.innerHTML += `<option value=${i}>${i}</option>`
     }
 
-
     const container = document.getElementById('dog-container');
     const url = "https://dog.ceo/api/breeds/image/random";
-
-    // fetch(url).then((resp) => resp.json()).then((body) => {
-    //   container.innerHTML = `<img src="${body.message}" />`
-    // });
 
     function fetchNewDog() {
       fetch(url).then(function (resp) {
@@ -40,6 +35,7 @@
         container.innerHTML = `<img class="image" src="${body.message}" />`;
       });
     }
+
 
     // async function fetchNewDog() {
     //   if (imageSelect.value == 1) {
