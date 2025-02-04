@@ -21,39 +21,30 @@
   <script>
     const imageSelect = document.getElementById('imageCount');
 
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 10; i++) {
       imageSelect.innerHTML += `<option value=${i}>${i}</option>`
     }
 
     const container = document.getElementById('dog-container');
     const url = "https://dog.ceo/api/breeds/image/random";
 
-    function fetchNewDog() {
-      fetch(url).then(function (resp) {
-        return resp.json()
-      }).then(function (body) {
+    async function fetchNewDog() {
+      if (imageSelect.value == 1) {
+        let resp = await fetch(url);
+        let body = await resp.json();
+
         container.innerHTML = `<img class="image" src="${body.message}" />`;
-      });
+      } else {
+        let resp = await fetch(url + `/${imageSelect.value}`);
+        let body = await resp.json();
+
+        container.innerHTML = ''
+
+        for (let i = 0; i < body.message.length; i++) {
+          container.innerHTML += `<img class="image" src="${body.message[i]}" />`;
+        }
+      }
     }
-
-
-    // async function fetchNewDog() {
-    //   if (imageSelect.value == 1) {
-    //     let resp = await fetch(url);
-    //     let body = await resp.json();
-
-    //     container.innerHTML = `<img class="image" src="${body.message}" />`;
-    //   } else {
-    //     let resp = await fetch(url + `/${imageSelect.value}`);
-    //     let body = await resp.json();
-
-    //     container.innerHTML = ''
-
-    //     for (let i = 0; i < body.message.length; i++) {
-    //       container.innerHTML += `<img class="image" src="${body.message[i]}" />`;
-    //     }
-    //   }
-    // }
 
     fetchNewDog()
   </script>
